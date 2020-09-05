@@ -1,4 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Screenshots demo
+![todo-ukie-1](https://user-images.githubusercontent.com/59982728/92313665-f58e3980-efd6-11ea-800d-9fdecaf3d571.png)
+![todo-ukie-2](https://user-images.githubusercontent.com/59982728/92313652-c8da2200-efd6-11ea-90ee-ce56858b8548.png)
 
 ## Available Scripts
 
