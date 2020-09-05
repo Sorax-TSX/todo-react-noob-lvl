@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+}
+
+$bg-header: #e3e3e3;
+
+.wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #e3e3e3;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.todo {
+  width: 350px;
+
+  &__header {
+    display: flex;
+    padding: 10px 10px;
+    justify-content: space-between;
+    background-color: $bg-header;
+    font-weight: 400;
+
+    &-delete img{
+      width: 20px;
+      right: 10px;
+      top: 10px;
+      height: 18px;
+      position: absolute;
+      cursor: pointer;
+    }
+  }
+
+  &__body {
+    min-height: 350px;
+    padding: 20px 10px;
+  }
+
+  &__task {
+    width: 100%;
+    margin-bottom: 10px;
+    position: relative;
+
+    .title-text {
+      position: relative;
+      padding-left: 10px;
+      line-height: 25px;
+    }
+    .title-text-checked {
+      font-style: italic;
+    }
+    .fake {
+      font-size: 0;
+
+      &:before {
+        content: "";
+        display: inline-flex;
+        width: 20px;
+        height: 20px;
+        top: 3px;
+        border: 2px solid #000;
+        position: relative;
+        border-radius: 50%;
+      }
+
+      &:after {
+        content: '\1F5F8';
+        position: absolute;
+        width: 20px;
+        height: 16px;
+        left: 6px;
+        top: -2px;
+        color: #000;
+        background-color: #fff;
+        font-size: 25px;
+        opacity: 0;
+        transition: .2s;
+      }
+    }
+  }
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__checkbox:checked + .fake:after {
+    opacity: 1;
+  }
+
+  &__footer {
+    padding: 10px;
+
+    .add-form {
+      display: flex;
+      align-items: center;
+
+      .task-input {
+        width: 100%;
+        padding: 5px 10px;
+        border: 1px solid #e3e3e3;
+        border-radius: 5px;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+
+  &__add-button {
+    width: 15px;
+    height: 15px;
+    border: none;
+    font-size: 0;
+    margin-right: 10px;
+    background: url('../static/plus.svg') no-repeat;
+    background-size: 100%;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.alert-error {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 250px;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #ef6c00;
+}
